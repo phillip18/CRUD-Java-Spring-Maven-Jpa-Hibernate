@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Cadastro Pessoal - Teste</title>
 </head>
 <body>
 	<h2>Preencha seus Dados</h2>
@@ -68,5 +68,7 @@
 				</div>
 			</div>
 		</form>
+		
+		<a href="/infoprice">Voltar</a>
 </body>
 </html>

@@ -8,5 +8,8 @@
 </head>
 <body>
 	<h1> Faça seu Cadastro!</h1>
+	
+	<a href="cadastro/form">Cadastrar nova Pessoa |</a>
+	<a href="cadastro/lista">Listar Pessoas</a>
 </body>
 </html>
