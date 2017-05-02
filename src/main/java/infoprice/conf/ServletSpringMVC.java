@@ -1,10 +1,14 @@
 // Classe basica de configuração do Spring
 package infoprice.conf;
 
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class ServletSpringMVC  extends AbstractAnnotationConfigDispatcherServletInitializer {
 
+	private CharacterEncodingFilter characterEncodingFilter;
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return null;
@@ -21,6 +25,13 @@ public class ServletSpringMVC  extends AbstractAnnotationConfigDispatcherServlet
 	protected String[] getServletMappings() {
 		return new String[] {"/"};
 	}
+	
+/*	@Override
+	protected Filter[] getServletFilters(){
+		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+		encodingFilter.setEncoding("UTF-8");
 		
+		return Filter[]{encodingFilter};
+	}*/
 
 }

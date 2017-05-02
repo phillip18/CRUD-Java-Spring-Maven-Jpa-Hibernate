@@ -11,6 +11,10 @@
 	
 	<h1>Lista de Endereços</h1>
 	
+	<div>
+		${sucesso}
+	</div>
+	
 	<table>
 	
 		<tr>
