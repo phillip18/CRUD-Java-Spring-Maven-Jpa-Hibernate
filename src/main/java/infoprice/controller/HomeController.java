@@ -10,7 +10,6 @@ public class HomeController {
 	//Definindo que este metodo atende a um determinado path ou endere�o
 	@RequestMapping("/")
 	private String index() {
-		System.out.println("Entrando na Home");
 		return "home";
 	}
 
