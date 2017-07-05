@@ -65,6 +65,9 @@ public class Address {
 		return "Address [nome=" + nome + ", email=" + email + ", logradouro=" + logradouro + ", numero=" + numero
 				+ ", complemento=" + complemento + ", bairro=" + bairro + ", cidade=" + cidade + "]";
 	}
+	public  int getId() {
+		return id;
+	}
 	
 	
 }

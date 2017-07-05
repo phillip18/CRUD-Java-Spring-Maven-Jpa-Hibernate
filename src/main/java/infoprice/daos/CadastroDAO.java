@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import infoprice.models.Address;
@@ -18,7 +19,7 @@ public class CadastroDAO {
 	// Gerenciador das entidades
 	@PersistenceContext
 	private EntityManager manager;
-
+	
 	public void gravar(Address cadastro) {
 
 		manager.persist(cadastro);
@@ -28,15 +29,16 @@ public class CadastroDAO {
 		return manager.createQuery("select p from Address p", Address.class).getResultList();
 	}
 
-	public TypedQuery<Address> delete(int id) {
-		return manager.createQuery("Delete p from Address p", Address.class);
+	public void remove(Address address) {
+		Address deleteaddr= find(Address.getId());
+	      manager.remove(deleteaddr);
 	}
 
 	public Address find(int id) {
 		return manager.find(Address.class, id);
 	}
 	
-	public List<Address> edit(int id) {
-		return manager.createQuery("Update p from Address p", Address.class).getResultList();
+	public void edit(Address address) {
+		manager.merge(address);
 	}
 }

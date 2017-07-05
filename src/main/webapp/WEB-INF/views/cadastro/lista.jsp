@@ -48,8 +48,8 @@
 				<td>${addr.complemento}</td>
 				<td>${addr.bairro}</td>
 				<td>${addr.cidade}</td>
-				<td> <a href="/cadastro/lista/{id}" class="glyphicon glyphicon-trash"></a></td>
-				<td> <a href="/edit/{id}" class="glyphicon glyphicon-pencil"></a></td>
+				<td> <a href="remove" class="glyphicon glyphicon-trash"></a></td>
+				<td> <a href="altera" class="glyphicon glyphicon-pencil"></a></td>
 			</tr>
 		</c:forEach>
 	</table>

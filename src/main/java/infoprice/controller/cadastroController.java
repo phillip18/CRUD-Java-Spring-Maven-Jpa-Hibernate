@@ -28,8 +28,7 @@ public class cadastroController {
 		return "cadastro/form";
 	}
 
-	@RequestMapping(method = RequestMethod.POST) // Persistindo os valores no
-													// banco
+	@RequestMapping(method = RequestMethod.POST) // Persistindo os valores no banco
 	public ModelAndView gravar(Address address, RedirectAttributes redirecAttributes) {
 		cadastroDao.gravar(address);
 		redirecAttributes.addFlashAttribute("sucesso", "Cadastro efetuado com Sucesso");
@@ -45,16 +44,29 @@ public class cadastroController {
 
 		return modelAndView;
 	}
-
-	@RequestMapping(method = RequestMethod.PUT, value="/cadastro/form/edit/{id}")
+	
+	@RequestMapping(method = RequestMethod.PUT, value="/form/edit/{id}")
 	public ModelAndView edit(){
 		List<Address> address = cadastroDao.edit(id);
 		ModelAndView modelAndView = new ModelAndView("/cadastro/form");
 		modelAndView.addObject("address", address);		
 		}
-	
-	@RequestMapping(method = RequestMethod.DELETE, value="/cadastro/lista/{id}")
+	/*
+	@RequestMapping(method = RequestMethod.DELETE, value="/lista/{id}")
 	public Address delete(@PathVariable Integer id){
 		return (Address) cadastroDao.delete(id);
 		}
+	*/
+	@RequestMapping(method = RequestMethod.DELETE, value="remove")
+	  public String remove(Address id) {
+		cadastroDao.remove(id);
+	    return "redirect:cadastro/lista";
+	  }
+	
+	@RequestMapping(method = RequestMethod.PUT, value="altera")
+	  public String edit(int id) {
+		cadastroDao.find(id)
+		cadastroDao.edit(id);
+	    return "redirect:listaTarefas";
+	  }
 }
